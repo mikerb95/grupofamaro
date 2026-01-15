@@ -141,8 +141,12 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: var(--gradient-1);
-    opacity: 0.05;
+    /* Background image */
+    background: linear-gradient(180deg, rgba(15,52,96,0.45) 0%, rgba(15,52,96,0.15) 60%), url('src/images/famaro-hero3.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 1;
 }
 
 .hero-background::before {
