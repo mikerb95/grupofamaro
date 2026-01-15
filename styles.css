@@ -174,11 +174,12 @@ body {
     font-weight: 800;
     line-height: 1.1;
     margin-bottom: 24px;
-    color: var(--text-dark);
+    color: var(--text-light);
 }
 
 .gradient-text {
-    background: var(--gradient-1);
+    /* Light gradient for contrast on dark hero background */
+    background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(240,248,255,0.9) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -186,7 +187,7 @@ body {
 
 .hero-subtitle {
     font-size: clamp(16px, 2vw, 20px);
-    color: var(--text-gray);
+    color: rgba(255,255,255,0.92);
     margin-bottom: 40px;
     line-height: 1.8;
 }
@@ -239,7 +240,7 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 12px;
-    color: var(--text-gray);
+    color: rgba(255,255,255,0.85);
     font-size: 12px;
     font-weight: 600;
     letter-spacing: 2px;
