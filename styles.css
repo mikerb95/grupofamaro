@@ -92,6 +92,23 @@ body {
     color: var(--primary-color);
 }
 
+.lang-switch {
+    padding: 8px 16px !important;
+    background: var(--light-bg);
+    color: var(--primary-color) !important;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.lang-switch:hover {
+    background: var(--primary-color);
+    color: var(--text-light) !important;
+}
+
 .btn-contact {
     padding: 10px 24px;
     background: var(--gradient-1);
