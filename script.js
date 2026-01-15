@@ -1,4 +1,39 @@
 // ===================================
+// Language Detection & Redirect
+// ===================================
+function detectAndRedirectLanguage() {
+    // Get browser language
+    const browserLanguage = navigator.language || navigator.userLanguage;
+    const baseName = window.location.pathname.split('/').pop() || 'index.html';
+    
+    // Check if user has already visited (check localStorage)
+    const languagePreference = localStorage.getItem('preferredLanguage');
+    
+    // If no preference set and browser is English, redirect to English version
+    if (!languagePreference && browserLanguage.startsWith('en')) {
+        // Only redirect if we're on the Spanish version
+        if (baseName === 'index.html' || baseName === '') {
+            window.location.href = 'index-en.html';
+        }
+    }
+}
+
+// Run language detection on page load
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', detectAndRedirectLanguage);
+} else {
+    detectAndRedirectLanguage();
+}
+
+// Store language preference when user clicks language switcher
+document.addEventListener('click', (e) => {
+    if (e.target.classList.contains('lang-switch')) {
+        const targetLang = e.target.textContent.trim() === 'EN' ? 'es' : 'en';
+        localStorage.setItem('preferredLanguage', targetLang);
+    }
+});
+
+// ===================================
 // Mobile Menu Toggle
 // ===================================
 const menuToggle = document.querySelector('.menu-toggle');
